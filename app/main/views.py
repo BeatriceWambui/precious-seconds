@@ -20,3 +20,16 @@ def new_pitch():
         pitch.save()
         return redirect(url_for('main.index'))
     return render_template('pitch.html',form=form)
+
+@main.route('/comments/<init:pitch_id>',methods = ['GET','POST'])
+@login_required
+def comment(pitch_id):
+    forms = CommentForm()
+    if form.validate_on_submit():
+        user_id= current_user._get_current_object().id
+        comment = Comments(comment=form.comment.data)
+        pitch_id = pitch_id 
+        comment.save()
+        return redirect(url_for('main.index'))
+    return render_template('comments.html',forms= forms)
+
