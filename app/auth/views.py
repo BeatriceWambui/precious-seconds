@@ -3,7 +3,7 @@ from . import auth
 from ..models import User
 from .forms import RegistrationForm,LoginForm
 from .. import db
-from flask_login import login_user
+from flask_login import login_user,logout_user,login_required
 
 @auth.route('/create_account',methods = ["GET","POST"])
 def create_account():
@@ -13,7 +13,6 @@ def create_account():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('auth.login'))
-        title = "New Account"
     return render_template('auth/register.html',registration_form = form)
 
 @auth.route('/login',methods=['GET','POST'])
@@ -27,3 +26,9 @@ def login():
 
         flash('Invalid username or Password')
     return render_template('auth/login.html',login_form = login_form)
+
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("main.index"))
