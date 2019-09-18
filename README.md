@@ -43,6 +43,7 @@ which is also adjacent to the description at the top of the repository This is d
 * database is also included
 
 ## Contact Information
+To reach me use the email below
 Email
 **wachirabeatice2020@gmail.com**
 
