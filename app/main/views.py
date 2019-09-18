@@ -5,3 +5,8 @@ from . import main
 @main.route('/')
 def index():
     return render_template('index.html')
+
+@main.route('/pitches/new/',methods = ['GET','POST'])
+@login_required
+def new_pitch(id): 
+    return render_template('.html')
