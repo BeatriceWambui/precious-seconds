@@ -12,6 +12,7 @@ class User(UserMixin,db.Model):
     id= db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255),unique = True)
     pass_secure = db.Column(db.String(255))
+    pitch = db.relationship('Pitch',backref='user',lazy='dynamic')
     email=db.Column(db.String(255),unique = True)
 
     @property
@@ -34,6 +35,10 @@ class Pitch(db.Model):
     title = db.Column(db.String(255))
     category = db.Column(db.String(255))
     description = db.Column(db.String(255))
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
 
     @classmethod
     def get_pitches(id):
