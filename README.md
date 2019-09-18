@@ -2,10 +2,10 @@
 This is a python project based on my precious 60 seconds to impress someone.The app is based on helping the user to  see the pitches other people have posted,vote on them,signin,comment,view pitches created in their profile,comment and leave feedback,submit pitches.
 
 ## Author 
-Wachira Beatrice Wambui
-Kenyan citizen
-Born Again Christian
-Student Moringa School Project
+* Wachira Beatrice Wambui
+* Kenyan citizen
+* Born Again Christian
+* Student Moringa School Project
 
 ## live link 
 The link to the live deployment of this app is https://pitchbe.herokuapp.com/
