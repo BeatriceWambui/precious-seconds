@@ -1,0 +1,33 @@
+h1{
+    font-size: 80px;
+    color: whitesmoke;
+    text-align: center;
+}
+h3{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 40px;
+}
+.card{
+    padding-left:10%;
+    padding-right:5%;
+    background-color: rgb(0,0,0,0.9);
+    opacity: 0.9;
+    color:white;
+    background-size: auto;
+    border: 2px solid white;
+}
+.container{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+.container-fluid{
+    background-image: url('./img1.jpg')
+}
+.row{
+    background-color: rgb(0,0,0,0.9);
+    opacity: 0.5;
+    color:white;
+    background-size: auto;
+    background-position: cover;
+}

@@ -2,16 +2,18 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
-<div class="container">
-<div class="row">
-<div class="col-md-2"> </div>
-<div class="col-md-8">
-
-{{wtf.quick_form(form)}}
-
-</div>
-<div class="col-md-2"></div>
-</div>
+<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+<div class="container-fluid">
+    <h3> WRITE A PITCH</h3> <hr>
+        <div class="row">
+            <div class="col-md-2"> </div>
+            <div class="col-md-8">
+            
+            {{wtf.quick_form(form)}}
+            
+            </div>
+            <div class="col-md-2"></div>
+        </div>
 </div>
 
 {% endblock%}
