@@ -5,12 +5,16 @@
 <div class="container">
 <div class="row">
 <div class="col-md-2"> </div>
-<div class="col-md-8">
+<div class="col-md-4">
 
 {{wtf.quick_form(forms)}}
 
 </div>
-<div class="col-md-2"></div>
+<div class="col-md-6">
+    {%for comment in comments%}
+        {{comment.comment}}
+    {% endfor %}
+</div>
 </div>
 </div>
 

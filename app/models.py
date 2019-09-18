@@ -59,7 +59,5 @@ class Comments(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
-
-
     def __repr__(self):
-        return f'User {self.comment}'
+        return f'Comments {self.comment}'

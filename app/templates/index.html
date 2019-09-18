@@ -14,7 +14,7 @@
                 <div class="card-body">
                   <p class="card-title">{{pitch.title}}</p>
                   <p class="card-text">{{pitch.description}}</p>
-                  <a href="#" class="btn btn-primary">Comment</a>
+                  <a href="{{url_for('main.comment', pitch_id = pitch.id)}}" class="btn btn-primary">Comment</a>
                 </div>
         </div>
      

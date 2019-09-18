@@ -6,15 +6,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
         </button>
-        <a class="navbar-brand" href="#">WebSiteName</a>
+        <a class="navbar-brand" href="{{url_for('main.index')}}">Home</a>
+        <a class="navbar-brand" href="{{url_for('main.new_pitch')}}"">Pitch</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li> 
-          <li><a href="#">Page 3</a></li> 
-        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{{url_for('auth.create_account')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="{{url_for('auth.login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
