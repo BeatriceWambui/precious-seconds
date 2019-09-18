@@ -12,6 +12,7 @@ class User(UserMixin,db.Model):
     id= db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255),unique = True)
     pass_secure = db.Column(db.String(255))
+    comment = db.relationship('Comments',backref='user',lazy='dynamic')
     pitch = db.relationship('Pitch',backref='user',lazy='dynamic')
     email=db.Column(db.String(255),unique = True)
 
@@ -35,6 +36,7 @@ class Pitch(db.Model):
     title = db.Column(db.String(255))
     category = db.Column(db.String(255))
     description = db.Column(db.String(255))
+    comment = db.relationship('Comments',backref='pitch',lazy='dynamic')
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     def save(self):
         db.session.add(self)
@@ -47,3 +49,17 @@ class Pitch(db.Model):
     
     def __repr__(self):
         return f'User {self.category}'
+
+class Comments(db.Model):
+    __tablename__='comments'
+    id=db.Column(db.Integer,primary_key=True)
+    comment=db.Column(db.String(255))
+    user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
+    pitch_id=db.Column(db.Integer,db.ForeignKey('pitches.id'))
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+
+    def __repr__(self):
+        return f'User {self.comment}'
