@@ -2,7 +2,23 @@
 
 {%block content%}
 
-{%for pitch in all_pitches%}
-    {{pitch.title}}
-{%endfor%}
+
+<div class="container">
+        <h1>MY PRECIOUS SECONDS</h1>
+        {%for pitch in all_pitches%}
+
+        <div class="card">
+                <div class="card-header">
+                    {{pitch.title}}   
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{pitch.category}}</h5>
+                  <p class="card-text">{{pitch.description}}</p>
+                  <a href="#" class="btn btn-primary">Comment</a>
+                </div>
+        </div>
+     
+        {%endfor%}
+</div>  
+
 {% endblock %}
